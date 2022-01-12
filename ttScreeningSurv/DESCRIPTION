@@ -1,0 +1,26 @@
+Package: ttScreeningSurv
+Type: Package
+Title: A training testing process to screening high dimensional epigenetic data such as Genome-wide DNA methylation CpGs
+Version: 0.1.0
+Author: Lu Xie, Hongmei Zhang, Meredith Ray, Yu Jiang
+Maintainer: Lu Xie <lxie3@memphis.edu>
+Description: This function conducts a two step process for data with survival outcomes and high dimensional exposure variables
+       The first step is a crude screening at a cutoff level, defined by users
+       the second step is a ttScreening process, at a training significance level and a testing significance level with assinged number of iterations. 
+       Argument
+       Survivaldata is a dataframe which includes time status
+       DNAm is a dataframe which includes high dimension
+       Covariate_con=NULL multiple continuous covariates dataframe
+       Covariate_cat=NULL multiple categorical covariates dataframe
+       Cutoff.Joint=0.1 default cutoff level at the first step
+       Iterations=100 default number of iterations
+       Train.SigLevel=0.05 default significance level for a CpG to pass the training data screening
+       Test.SigLevel=0.05 default significance level for a CpG to pass the testing data screening
+       Percentage=0.50 default percentage level to pass ttScreening process
+       Example
+       ttscreening_surv(Survivaldata,DNAm,Covariate_con=Covariate_con_test,Covariate_cat=Covariate_cat_test, 
+       Cutoff.Joint=0.1,Iterations=100,Train.SigLevel=0.05,Test.SigLevel=0.05,Percentage=0.01)
+License: What license is it under?
+Imports: fastDummies, survival
+Encoding: UTF-8
+LazyData: true
